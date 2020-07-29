@@ -9,3 +9,48 @@
     2次登录被创建
 </body>
 </html>
+cd /Users/yuangong/Desktop/git-demo
+touch index.html 创建一个index.html文件
+touch app.js 创建一个app.js文件
+git init  初始化本地仓库
+git config --global user.name 'wangmeng3' 全局设置用户名 邮箱
+git config --global user.email 'wangmeng3@tu.cn'
+git add index.html 将文件添加到本地仓库
+git status  查看状态
+
+删除index.html
+git rm --cached index.html
+git status
+
+git add *.html
+git add .  添加所有的文件
+git status
+
+用来忽略哪个文件不上传
+touch .gitignore
+git add .
+git commit -m 'another change' ====git commit弹出一个备注信息 
+
+创建login分支  默认有个master分支
+git branch login 
+yuangong@baoshan git-demo % git status      
+On branch master
+nothing to commit, working tree clean
+yuangong@baoshan git-demo % git checkout login  切换到login分支
+Switched to branch 'login'
+touch login.html 在login分支创建一个login.html文件
+git status
+git commit -m 'login form' 提交login.html文件
+
+git checkout login 
+git checkout master  切换到master分支
+在master分支合并login分支
+git merge login 
+
+////如何把本地仓库弄进远程仓库
+在 github 上创建 Newrepositry
+git remote add origin https://github.com/sophie-M-R/homework.git
+完了后 git remote
+默认 origin
+然后 git push -u origin master
+最后刷新网页
